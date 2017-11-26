@@ -20,7 +20,7 @@ export default class Deposit extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#2980b9'
+    backgroundColor: '#0E3353'
   },
   dashboard:{
     padding: 20,
