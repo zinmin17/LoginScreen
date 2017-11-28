@@ -11,15 +11,17 @@ export default class Accounts extends Component {
   render() {
     var swipeoutBtns = [
       {
-      text: 'Fund',
-      backgroundColor: '#2b638d',
-      onPress: () => { this.deleteNote(rowData) }
-     },
+        text: 'Fund',
+        backgroundColor: '#F27840',
+        color: '#E2E2E2',
+        onPress: () => { this.deleteNote(rowData) }
+      },
       {
         text: 'Setting',
-        backgroundColor: '#9F9B9B',
+        backgroundColor: '#595A6B',
+        color: '#E2E2E2',
         onPress: () => { this.duplicateNote(rowData) }
-     },
+      },
     ]
     return (
             <View style={styles.container}>
