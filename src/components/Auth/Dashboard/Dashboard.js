@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet, View, Text, StatusBar, FlatList, Alert, Platform} from 'react-native';
+import {StyleSheet, View, Text, Image, StatusBar, FlatList, Alert, Platform} from 'react-native';
 //import  EvilIcons  from 'react-native-vector-icons/EvilIcons';
 
 export default class Dashboard extends Component {
@@ -9,12 +9,12 @@ export default class Dashboard extends Component {
    super(props);
 
    this.state = { GridViewItems: [
-     {key: 'One'},
-     {key: 'Two'},
-     {key: 'Three'},
-     {key: 'Four'},
-     {key: 'Five'},
-     {key: 'Six'},
+     {key: 'Profile'},
+     {key: 'Address'},
+     {key: 'POI'},
+     {key: 'POR'},
+     {key: 'Bank'},
+     {key: 'Introducer'},
    ]}
  }
 
@@ -28,11 +28,16 @@ export default class Dashboard extends Component {
 
     return (
       <View style={styles.container}>
+      <View style={styles.testWrap}>
           <Text style={styles.titleText}> Dashboard </Text>
 
+
           <View style={styles.profileContainer}>
-            <Text> email : adfjadfj@adfjlds.com </Text>
+              <View style={styles.profilepicWrap}>
+                  <Image style={styles.profilepic} source={require('../../../images/profile-default.png')} />
+              </View>
           </View>
+
           <FlatList style={styles.GridViewContainer}
                data={ this.state.GridViewItems }
                renderItem={({item}) =>
@@ -41,6 +46,7 @@ export default class Dashboard extends Component {
                   </View>}
                   numColumns={2}
           />
+          </View>
         </View>
     );
   }
@@ -57,26 +63,53 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color : '#D3D2D0',
     textAlign: 'center',
-    marginTop: '15%',
+    //marginTop: '15%',
   },
-  profileContainer:{
-    position: "absolute",
-    marginTop: '2%',
-  },
-  GridViewContainer:{
+  testWrap:{
     position: "absolute",
     bottom: 0,
     left: 0,
     right: 0,
+  },
+  profileContainer:{
+    //flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding:20,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    height: 150,
+  },
+  profilepicWrap:{
+    width: 120,
+    height: 120,
+    borderRadius: 100,
+    borderColor: '#C5C4C2',
+    borderWidth:5,
+    marginTop: '1%',
+    backgroundColor:'red',
+  },
+  profilepic:{
+    flex: 1,
+    width: null,
+    alignSelf: 'stretch',
+    //borderRadius: 40,
+    //borderColor: '#fff',
+    //borderWidth: 4,
+  },
+  GridViewContainer:{
+    //position: "absolute",
+    //bottom: 0,
+    //left: 0,
+    //right: 0,
     backgroundColor: 'green',
   },
   GridViewBlockStyle: {
     justifyContent: 'center',
     flex:1,
     alignItems: 'center',
-    height: 100,
+    height: 120,
     backgroundColor: '#C5C4C2',
-    borderWidth: .5,
+    borderWidth: 0.5,
     borderColor: '#B0AFAD',
   },
 GridViewInsideTextItemStyle: {
