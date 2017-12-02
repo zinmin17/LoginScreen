@@ -54,7 +54,7 @@ export const DashboardTab = TabNavigator({
 }, {
     lazy: true,
     tabBarPosition: 'bottom',
-    initialRouteName: 'Accounts',
+    initialRouteName: 'Dashboard',
     tabBarOptions: {
           activeTintColor: '#ffffff',
           inactiveTintColor: '#ffffff',
