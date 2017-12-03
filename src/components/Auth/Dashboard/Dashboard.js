@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {StyleSheet, View, Text, Image, StatusBar, FlatList, Alert, Platform} from 'react-native';
 //import  EvilIcons  from 'react-native-vector-icons/EvilIcons';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class Dashboard extends Component {
 
@@ -9,12 +10,12 @@ export default class Dashboard extends Component {
    super(props);
 
    this.state = { GridViewItems: [
-     {key: 'Profile'},
-     {key: 'Address'},
-     {key: 'POI'},
-     {key: 'POR'},
-     {key: 'Bank'},
-     {key: 'Introducer'},
+     {key: ' Profile', icon:'md-person'},
+     {key: 'Address', icon:'md-home'},
+     {key: 'POI', icon:'md-image'},
+     {key: 'POR', icon:'md-image'},
+     {key: 'Bank', icon:'md-card'},
+     {key: 'Introducer', icon:'md-people'},
    ]}
  }
 
@@ -28,20 +29,26 @@ export default class Dashboard extends Component {
 
     return (
       <View style={styles.container}>
-      <View style={styles.testWrap}>
+      <View style={styles.containerWrap}>
           <Text style={styles.titleText}> Dashboard </Text>
-
 
           <View style={styles.profileContainer}>
               <View style={styles.profilepicWrap}>
                   <Image style={styles.profilepic} source={require('../../../images/profile-default.png')} />
               </View>
+              <Text style={styles.profileText}> Zin Min </Text>
           </View>
 
-          <FlatList style={styles.GridViewContainer}
+          <View style={styles.emailContainer}>
+              <Text style={styles.emailText}> zm.mgmg@gmail.com </Text>
+
+          </View>
+
+          <FlatList
                data={ this.state.GridViewItems }
                renderItem={({item}) =>
                   <View style={styles.GridViewBlockStyle}>
+                      <Icon name={item.icon} size={25} color="#3E404C" />
                       <Text style={styles.GridViewInsideTextItemStyle} onPress={this.GetGridViewItem.bind(this, item.key)} > {item.key} </Text>
                   </View>}
                   numColumns={2}
@@ -65,7 +72,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     //marginTop: '15%',
   },
-  testWrap:{
+  containerWrap:{
     position: "absolute",
     bottom: 0,
     left: 0,
@@ -80,8 +87,8 @@ const styles = StyleSheet.create({
     height: 150,
   },
   profilepicWrap:{
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 80,
     borderRadius: 100,
     borderColor: '#C5C4C2',
     borderWidth:3,
@@ -95,12 +102,19 @@ const styles = StyleSheet.create({
     //borderColor: '#fff',
     //borderWidth: 4,
   },
-  GridViewContainer:{
-    //position: "absolute",
-    //bottom: 0,
-    //left: 0,
-    //right: 0,
-    backgroundColor: 'green',
+  profileText:{
+    fontSize: 15,
+    marginTop: 10,
+    color: '#C5C4C2',
+  },
+  emailContainer:{
+    backgroundColor: '#3E404C',
+    height: 35,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  emailText:{
+    color: '#C5C4C2',
   },
   GridViewBlockStyle: {
     justifyContent: 'center',
@@ -114,7 +128,7 @@ const styles = StyleSheet.create({
 GridViewInsideTextItemStyle: {
    color: '#3E404C',
    padding: 10,
-   fontSize: 18,
+   fontSize: 15,
    justifyContent: 'center',
  },
 
