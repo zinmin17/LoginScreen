@@ -40,15 +40,14 @@ export default class Dashboard extends Component {
           </View>
 
           <View style={styles.emailContainer}>
-              <Text style={styles.emailText}> zm.mgmg@gmail.com </Text>
-
+              <Text style={styles.emailText}>  zm.mgmg@gmail.com </Text>
           </View>
 
           <FlatList
                data={ this.state.GridViewItems }
                renderItem={({item}) =>
                   <View style={styles.GridViewBlockStyle}>
-                      <Icon name={item.icon} size={25} color="#3E404C" />
+                      <Icon name={item.icon} size={26} color="#0E3353" />
                       <Text style={styles.GridViewInsideTextItemStyle} onPress={this.GetGridViewItem.bind(this, item.key)} > {item.key} </Text>
                   </View>}
                   numColumns={2}
@@ -103,12 +102,13 @@ const styles = StyleSheet.create({
     //borderWidth: 4,
   },
   profileText:{
+    fontWeight: 'bold',
     fontSize: 15,
     marginTop: 10,
-    color: '#C5C4C2',
+    color: '#2CE39F',//C5C4C2',
   },
   emailContainer:{
-    backgroundColor: '#3E404C',
+    backgroundColor: '#0E3353',//3E404C',
     height: 35,
     alignItems: 'center',
     justifyContent: 'center',
@@ -126,9 +126,9 @@ const styles = StyleSheet.create({
     borderColor: '#B0AFAD',
   },
 GridViewInsideTextItemStyle: {
-   color: '#3E404C',
+   color: '#0E3353',//3E404C',
    padding: 10,
-   fontSize: 15,
+   fontSize: 12,
    justifyContent: 'center',
  },
 

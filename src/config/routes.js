@@ -4,7 +4,7 @@ import { TabNavigator, StackNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import Dashboard from '../components/Auth/Dashboard/Dashboard';
-import Deposit from '../components/Auth/Fund/Deposit';
+import Fund from '../components/Auth/Fund/Fund';
 import Accounts from '../components/Auth/Dashboard/Accounts';
 
 export const DashboardTab = TabNavigator({
@@ -17,11 +17,11 @@ export const DashboardTab = TabNavigator({
     }
   },
 
-  Deposit : {
-    screen: Deposit,
+  Fund : {
+    screen: Fund,
     navigationOptions: {
         tabBarLabel:'Fund',
-        tabBarIcon: ({tintColor}) => <Icon name="ios-card-outline" size={27} color={tintColor}/>,
+        tabBarIcon: ({tintColor}) => <Icon name="ios-card" size={27} color={tintColor}/>,
     }
   },
 
@@ -35,7 +35,7 @@ export const DashboardTab = TabNavigator({
   },
 
   Histroy : {
-    screen: Deposit,
+    screen: Fund,
     navigationOptions: {
         tabBarLabel:'History',
         tabBarIcon: ({tintColor}) => <Icon name="ios-calendar-outline" size={27} color={tintColor}/>,
