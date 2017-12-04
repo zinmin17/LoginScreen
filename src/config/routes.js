@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Dashboard from '../components/Auth/Dashboard/Dashboard';
 import Fund from '../components/Auth/Fund/Fund';
 import Accounts from '../components/Auth/Dashboard/Accounts';
+import Noti from '../components/Auth/Notification/Noti';
 
 export const DashboardTab = TabNavigator({
 
@@ -34,11 +35,11 @@ export const DashboardTab = TabNavigator({
     }
   },
 
-  Histroy : {
-    screen: Fund,
+  Noti : {
+    screen: Noti,
     navigationOptions: {
-        tabBarLabel:'History',
-        tabBarIcon: ({tintColor}) => <Icon name="ios-calendar-outline" size={27} color={tintColor}/>,
+        tabBarLabel:'Noti',
+        tabBarIcon: ({tintColor}) => <Icon name="ios-notifications-outline" size={27} color={tintColor}/>,
     }
   },
 
@@ -54,7 +55,7 @@ export const DashboardTab = TabNavigator({
 }, {
     lazy: true,
     tabBarPosition: 'bottom',
-    initialRouteName: 'Dashboard',
+    initialRouteName: 'Fund',
     tabBarOptions: {
           activeTintColor: '#ffffff',
           inactiveTintColor: '#ffffff',
