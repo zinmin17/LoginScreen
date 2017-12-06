@@ -7,6 +7,7 @@ import Dashboard from '../components/Auth/Dashboard/Dashboard';
 import Fund from '../components/Auth/Fund/Fund';
 import Accounts from '../components/Auth/Dashboard/Accounts';
 import Noti from '../components/Auth/Notification/Noti';
+import Setting from '../components/Auth/More/Setting';
 
 export const DashboardTab = TabNavigator({
 
@@ -43,8 +44,8 @@ export const DashboardTab = TabNavigator({
     }
   },
 
-  More : {
-    screen: Dashboard,
+  Setting : {
+    screen: Setting,
     navigationOptions: {
         tabBarLabel:'More',
         tabBarIcon: ({tintColor}) => <Icon name="ios-more-outline" size={30} color={tintColor}/>,
@@ -55,7 +56,7 @@ export const DashboardTab = TabNavigator({
 }, {
     lazy: true,
     tabBarPosition: 'bottom',
-    initialRouteName: 'Fund',
+    initialRouteName: 'Setting',
     tabBarOptions: {
           activeTintColor: '#ffffff',
           inactiveTintColor: '#ffffff',
